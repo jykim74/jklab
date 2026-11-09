@@ -1,5 +1,10 @@
 # CertMan Update Release
 
+## Version 2.3.8
+- Fixed LDAP publishing errors
+- Fixed an error with the OCSP NeedSign option
+- Changed the default DB profile
+
 ## Version 2.3.6
 -   Fixed an error in private key decryption
 -   Added support for manual links

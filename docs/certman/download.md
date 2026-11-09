@@ -7,15 +7,15 @@ category: Software
 
 CertMan is a desktop application for managing X.509 certificates and related PKI data. Create and manage key pairs, certificate signing requests (CSRs), certificates, and certificate revocation lists (CRLs).
 
-## Download CertMan 2.3.6
+## Download CertMan 2.3.8
 
 Choose the installer for your operating system:
 
 | Platform | Version | Download |
 | --- | --- | --- |
-| Windows 64-bit | 2.3.6 | [Download CertMan](https://jykim74.github.io/msi/CertMan-enV236.msi) |
-| macOS | 2.3.6 | [Download CertMan](https://jykim74.github.io/dmg/CertManV236.dmg) |
-| Linux 64-bit | 2.3.6 | [Download CertMan](https://jykim74.github.io/zip/CertManV236.zip) |
+| Windows 64-bit | 2.3.8 | [Download CertMan](https://jykim74.github.io/msi/CertMan-enV238.msi) |
+| macOS | 2.3.8 | [Download CertMan](https://jykim74.github.io/dmg/CertManV238.dmg) |
+| Linux 64-bit | 2.3.8 | [Download CertMan](https://jykim74.github.io/zip/CertManV238.zip) |
 
 ## Screenshot
 

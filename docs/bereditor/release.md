@@ -1,5 +1,10 @@
 # BerEditor Update Release
 
+## Version 3.0.0
+- Fixed errors related to LDAP CA import
+- Fixed errors related to CMS signing and verification
+- Fixed errors related to PDF signing and verification
+
 ## Version 2.9.8
 -   Fixed an error in private key decryption
 -   Added support for manual links

@@ -2,17 +2,17 @@
 
 - 👋 Hi, I’m Korean, and I’m not very comfortable with English.
 - 👀 I primarily use OpenSSL and Qt when developing PKI technology.
-- 🌱 [The BerEditor](https://jykim74.github.io/wiki/bereditor) is an auxiliary tool for PKI technology analysis.
-- 💞️ [The CertMan](https://jykim74.github.io/wiki/certman) is a tool for managing X.509 Certificate and CRL.
-- ✨ [The CryptokiMan](https://jykim74.github.io/wiki/cryptokiman) is a tool for managing HSM device with cryptoki library.
+- 🌱 [The BerEditor](https://jykim74.github.io/wiki/bereditor/download/) is an auxiliary tool for PKI technology analysis.
+- 💞️ [The CertMan](https://jykim74.github.io/wiki/certman/download/) is a tool for managing X.509 Certificate and CRL.
+- ✨ [The CryptokiMan](https://jykim74.github.io/wiki/cryptokiman/download/) is a tool for managing HSM device with cryptoki library.
 - My korea blog is [https://jykim74.tistory.com](https://jykim74.tistory.com)
 
 
 - You can download the programs in below icon.
 
-<a href="/wiki/bereditor/" target="_blank"><img src="https://img.shields.io/badge/BerEditor-006600?style=for-the-badge&logo=Qt&logoColor=white"></a>
-<a href="/wiki/certman/" target="_blank"><img src="https://img.shields.io/badge/CertMan-0094F5?style=for-the-badge&logo=Qt&logoColor=white"></a>
-<a href="/wiki/cryptokiman/" target="_blank"><img src="https://img.shields.io/badge/CryptokiMan-512BD4?style=for-the-badge&logo=Qt&logoColor=white"></a>
+<a href="/wiki/bereditor/download/" target="_blank"><img src="https://img.shields.io/badge/BerEditor-006600?style=for-the-badge&logo=Qt&logoColor=white"></a>
+<a href="/wiki/certman/download/" target="_blank"><img src="https://img.shields.io/badge/CertMan-0094F5?style=for-the-badge&logo=Qt&logoColor=white"></a>
+<a href="/wiki/cryptokiman/download/" target="_blank"><img src="https://img.shields.io/badge/CryptokiMan-512BD4?style=for-the-badge&logo=Qt&logoColor=white"></a>
 
 # Contact
 

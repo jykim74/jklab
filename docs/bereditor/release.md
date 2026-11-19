@@ -1,5 +1,12 @@
 # BerEditor Update Release
 
+## Version 3.0.2
+- Display information about path validation options
+- Support for EST Client Authentication
+- Change App Domain (Resets all settings and licenses)
+- Change of Copyright
+- Fixing CMP client errors and improving the UI
+
 ## Version 3.0.0
 - Fixed errors related to LDAP CA import
 - Fixed errors related to CMS signing and verification

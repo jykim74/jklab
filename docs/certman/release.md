@@ -1,5 +1,12 @@
 # CertMan Update Release
 
+## Version 2.4.0
+- Fix for HSM signing error
+- Support for setting PIN information in the service
+- Support for TSP and EST server authentication
+- Change of Copyright
+- Change App Domain (Resets all settings and licenses)
+
 ## Version 2.3.8
 - Fixed LDAP publishing errors
 - Fixed an error with the OCSP NeedSign option

@@ -1,5 +1,9 @@
 # CryptokiMan Update Release
 
+## Version 2.3.6
+- Change App Domain (Resets all settings and licenses)
+- Change of Copyright
+
 ## Version 2.3.4
 -   Fixed an error in private key decryption
 -   Added support for manual links

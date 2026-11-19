@@ -11,9 +11,9 @@ BerEditor is a desktop tool for viewing and editing ASN.1 BER/DER data and KMIP 
 
 | Platform | Version | Download |
 | --- | --- | --- |
-| Windows 64-bit | 3.0.0 | [Download BerEditor](https://jykim74.github.io/msi/BerEditor-enV300.msi) |
-| macOS | 3.0.0 | [Download BerEditor](https://jykim74.github.io/dmg/BerEditorV300.dmg) |
-| Linux 64-bit | 3.0.0 | [Download BerEditor](https://jykim74.github.io/zip/BerEditorV300.zip) |
+| Windows 64-bit | 3.0.2 | [Download BerEditor](https://jykim74.github.io/msi/BerEditor-enV302.msi) |
+| macOS | 3.0.2 | [Download BerEditor](https://jykim74.github.io/dmg/BerEditorV302.dmg) |
+| Linux 64-bit | 3.0.2 | [Download BerEditor](https://jykim74.github.io/zip/BerEditorV302.zip) |
 
 ## Screenshot
 

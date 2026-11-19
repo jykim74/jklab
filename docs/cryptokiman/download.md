@@ -7,15 +7,15 @@ category: Software
 
 CryptokiMan is a desktop application for managing and testing PKCS#11 Cryptoki modules.
 
-## Download CryptokiMan 2.3.4
+## Download CryptokiMan
 
 Choose the package for your operating system:
 
 | Platform | Version | Download |
 | --- | --- | --- |
-| Window 64-bit | 2.3.4 | [Download CryptokiMan](https://jykim74.github.io/msi/CryptokiMan-enV234.msi)
-| macOS | 2.3.4 | [Download CryptokiMan](https://jykim74.github.io/dmg/CryptokiManV234.dmg)
-| Linux 64-bit | 2.3.4 | [Download CryptokiMan](https://jykim74.github.io/zip/CryptokiManV234.zip)
+| Window 64-bit | 2.3.6 | [Download CryptokiMan](https://jykim74.github.io/msi/CryptokiMan-enV236.msi)
+| macOS | 2.3.6 | [Download CryptokiMan](https://jykim74.github.io/dmg/CryptokiManV236.dmg)
+| Linux 64-bit | 2.3.6 | [Download CryptokiMan](https://jykim74.github.io/zip/CryptokiManV236.zip)
 
 CryptokiMan was tested with the [SoftHSM library](https://www.opendnssec.org/softhsm/).
 

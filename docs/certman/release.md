@@ -3,6 +3,7 @@
 ## Version 2.4.0
 - Fix for HSM signing error
 - Support for setting PIN information in the service
+- Fixing the CMP P10CR error
 - Support for TSP and EST server authentication
 - Change of Copyright
 - Change App Domain (Resets all settings and licenses)

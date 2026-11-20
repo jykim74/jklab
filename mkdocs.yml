@@ -12,6 +12,7 @@ markdown_extensions:
 
 theme:
   name: material
+  favicon: images/bereditor.png
   custom_dir: overrides
   analytics:
     gtag: G-287S0CKBNS
@@ -21,7 +22,6 @@ theme:
 nav:
  - Home: index.md
  - Tools: tools.md
- - Blog: blog/index.md
  - PKI:
    - PKI Concept: pki/130-Public-Key-Infrastructure-PKI-Concepts.md
    - Digital Signatures and Certificates: pki/136-A-Story-About-Digital-Signatures-and-Certificates.md

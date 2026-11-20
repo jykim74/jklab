@@ -1,3 +1,8 @@
+---
+title: "BerEditor Release Notes and Version History"
+description: "Review BerEditor release notes, feature updates, and fixes for the ASN.1 BER/DER and KMIP tool."
+---
+
 # BerEditor Update Release
 
 ## Version 3.0.2

@@ -1,3 +1,8 @@
+---
+title: "Private Keys, Public Keys, and Certificates Explained"
+description: "Learn how private keys, public keys, and certificates work together to create and verify digital signatures."
+---
+
 # Private Keys, Public Keys, and Certificates
 
 When you work with a PKI system, you often encounter three terms: **private key**, **public key**, and **certificate**. They are fundamental to digital signatures. Here is a simple explanation.
@@ -10,7 +15,7 @@ In short:
 
 For an introduction to digital signatures and certificates, see [Digital Signatures and Certificates](136-A-Story-About-Digital-Signatures-and-Certificates.md).
 
-![Illustration comparing a digital signature and a certificate](../images/sign_cert.png)
+![Illustration comparing a digital signature and a certificate](./images/sign_cert.png)
 
 ## What is a private key?
 

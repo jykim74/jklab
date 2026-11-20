@@ -1,6 +1,7 @@
 ---
+title: "Download BerEditor | ASN.1 BER/DER and KMIP Viewer"
+description: "Download BerEditor for Windows, macOS, or Linux to view and edit ASN.1 BER/DER data and KMIP TTLV messages."
 layout: post
-title: "BerEditor — ASN.1, BER/DER, and KMIP TTLV Viewer"
 tags: [ASN.1, ASN.1 viewer, BER, BER reader, BER viewer, DER, DER reader, BigNum Calc, KMIP, TTLV]
 category: Software
 ---

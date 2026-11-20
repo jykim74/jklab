@@ -1,13 +1,16 @@
 ---
+title: "Download CertMan | X.509 Certificate and CRL Manager"
+description: "Download CertMan for Windows, macOS, or Linux to manage X.509 certificates, key pairs, CSRs, and CRLs."
 layout: post
-title: "CertMan — X.509 Certificate and CRL Manager"
 tags: [X.509, Cert, Certificate, CRL, RSA, ECDSA, PKI, CSR, KeyPair]
 category: Software
 ---
 
+# Download CertMan
+
 CertMan is a desktop application for managing X.509 certificates and related PKI data. Create and manage key pairs, certificate signing requests (CSRs), certificates, and certificate revocation lists (CRLs).
 
-## Download CertMan
+## Choose a platform
 
 Choose the installer for your operating system:
 

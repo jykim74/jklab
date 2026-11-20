@@ -1,3 +1,8 @@
+---
+title: "Public Key Infrastructure (PKI) Concepts"
+description: "Learn the basics of public key infrastructure, including certificate authorities, registration authorities, certificates, and revocation."
+---
+
 # Public Key Infrastructure (PKI): Concepts
 
 The term **PKI** appears in many fields. After working with it for a long time, I have come to think of PKI as a component that supports many different systems. It is rarely used on its own, but it turns up in many places. This article offers a brief overview of the concept.

@@ -1,3 +1,8 @@
+---
+title: "CryptokiMan Release Notes and Version History"
+description: "Review CryptokiMan release notes, feature updates, and fixes for the PKCS#11 Cryptoki manager."
+---
+
 # CryptokiMan Update Release
 
 ## Version 2.3.6

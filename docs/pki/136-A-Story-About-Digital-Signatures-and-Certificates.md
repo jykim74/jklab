@@ -1,3 +1,8 @@
+---
+title: "Digital Signatures and Certificates Explained"
+description: "Understand digital signatures, certificates, certificate authorities, and PKI through a plain-language analogy."
+---
+
 # A Story About Digital Signatures and Certificates
 
 Digital signatures and certificates are technical topics in public key infrastructure (PKI). Here is a plain-language explanation.

@@ -1,3 +1,8 @@
+---
+title: "Get a Free License for JKLab Tools"
+description: "Learn how to request and apply a free 60-day license for BerEditor, CertMan, and CryptokiMan."
+---
+
 # Get a Free License
 
 BerEditor, CertMan, and CryptokiMan support online issuance of a free, 60-day license. This feature is available in **version 1.8.0 and later**.

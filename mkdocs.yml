@@ -1,5 +1,5 @@
 site_name: JKLab
-site_url: https://jykim.github.io/wiki/
+site_url: https://jykim74.github.io/wiki/
 site_author: JayKim
 site_description: JKLab develops BerEditor, CertMan, and CryptokiMan for analysis of PKI technology.
 
@@ -20,9 +20,11 @@ theme:
 
 nav:
  - Home: index.md
+ - Tools: tools.md
+ - Blog: blog/index.md
  - PKI:
    - PKI Concept: pki/130-Public-Key-Infrastructure-PKI-Concepts.md
-   - Digial Signatures and Certificates: pki/136-A-Story-About-Digital-Signatures-and-Certificates.md
+   - Digital Signatures and Certificates: pki/136-A-Story-About-Digital-Signatures-and-Certificates.md
    - PrivateKey, PublicKey, Certificate: pki/259-Private-Keys-Public-Keys-and-Certificates.md
 
  - BerEditor: 
@@ -51,6 +53,12 @@ nav:
 
 extra_css:
   - css/extra.css
+
+plugins:
+  - search
+  - blog
+  - rss
+
 
 copyright: Copyright &copy; 2016 - 2026 <a href="mailto:jykim74@gmail.com">JayKim</a>, Maintained by the <a href="https://jykim74.github.io/wiki">JKLab</a>.
 

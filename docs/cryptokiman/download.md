@@ -1,19 +1,22 @@
 ---
+title: "Download CryptokiMan | PKCS#11 Cryptoki Manager"
+description: "Download CryptokiMan for Windows, macOS, or Linux to manage and test PKCS#11 Cryptoki modules."
 layout: post
-title: "CryptokiMan — PKCS#11 Cryptoki Manager"
 tags: [Cryptoki, CryptokiMan, ECDSA, HSM, PKCS#11, PKI, RSA]
 category: Software
 ---
 
+# Download CryptokiMan
+
 CryptokiMan is a desktop application for managing and testing PKCS#11 Cryptoki modules.
 
-## Download CryptokiMan
+## Choose a platform
 
 Choose the package for your operating system:
 
 | Platform | Version | Download |
 | --- | --- | --- |
-| Window 64-bit | 2.3.6 | [Download CryptokiMan](https://jykim74.github.io/msi/CryptokiMan-enV236.msi)
+| Windows 64-bit | 2.3.6 | [Download CryptokiMan](https://jykim74.github.io/msi/CryptokiMan-enV236.msi)
 | macOS | 2.3.6 | [Download CryptokiMan](https://jykim74.github.io/dmg/CryptokiManV236.dmg)
 | Linux 64-bit | 2.3.6 | [Download CryptokiMan](https://jykim74.github.io/zip/CryptokiManV236.zip)
 

@@ -1,3 +1,8 @@
+---
+title: "CertMan Release Notes and Version History"
+description: "Review CertMan release notes, feature updates, and fixes for the X.509 certificate and CRL manager."
+---
+
 # CertMan Update Release
 
 ## Version 2.4.0

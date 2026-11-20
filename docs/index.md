@@ -1,6 +1,11 @@
+---
+title: "PKI and Cryptography Tools"
+description: "Explore JKLab’s PKI software and guides, including BerEditor, CertMan, CryptokiMan, digital certificates, and public key infrastructure."
+---
+
 # JKLab
 
-Warehouse of Public Key Infrastruct&nbsp;JKLab.
+PKI and cryptography tools, documentation, and resources.
 
 ---
 

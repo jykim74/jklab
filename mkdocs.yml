@@ -23,9 +23,11 @@ nav:
  - Home: index.md
  - Tools: tools.md
  - PKI:
+   - ASN.1 BER vs DER: pki/asn1-ber-vs-der.md
    - PKI Concept: pki/130-Public-Key-Infrastructure-PKI-Concepts.md
    - Digital Signatures and Certificates: pki/136-A-Story-About-Digital-Signatures-and-Certificates.md
    - PrivateKey, PublicKey, Certificate: pki/259-Private-Keys-Public-Keys-and-Certificates.md
+   - ASN.1 BER vs DER : pki/asn1-ber-vs-der.md
 
  - BerEditor: 
    - Download: bereditor/download.md

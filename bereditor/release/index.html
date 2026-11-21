@@ -1,8 +1,2758 @@
-<head>
-<script async src="https://www.googletagmanager.com/gtm.js?id=G-GL5B8J3NB2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-</head>
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Review BerEditor release notes, feature updates, and fixes for the ASN.1 BER/DER and KMIP tool.">
+      
+      
+        <meta name="author" content="JayKim">
+      
+      
+        <link rel="canonical" href="https://jykim74.github.io/jklab/bereditor/release/">
+      
+      
+        <link rel="prev" href="../download/">
+      
+      
+        <link rel="next" href="../../certman/download/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../images/bereditor.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>BerEditor Release Notes and Version History - JKLab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bereditor-update-release" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="JKLab" class="md-header__button md-logo" aria-label="JKLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JKLab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BerEditor Release Notes and Version History
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jykim74/jklab/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="JKLab" class="md-nav__button md-logo" aria-label="JKLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    JKLab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jykim74/jklab/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PKI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PKI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pki/asn1-ber-vs-der/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER vs DER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pki/130-Public-Key-Infrastructure-PKI-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PKI Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pki/136-A-Story-About-Digital-Signatures-and-Certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Signatures and Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pki/259-Private-Keys-Public-Keys-and-Certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PrivateKey, PublicKey, Certificate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pki/asn1-ber-vs-der/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER vs DER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BerEditor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BerEditor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.github.io/bereditor_manual" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-302" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 3.0.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-300" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 3.0.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-298" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-294" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-292" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-290" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-286" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-284" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-282" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-280" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-278" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-276" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-274" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-272" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-270" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-268" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-266" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-264" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-262" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-260" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-258" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-256" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-254" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-252" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-250" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-244" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.4.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-242" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.4.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-240" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.4.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-238" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-236" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-234" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-232" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-230" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-228" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-226" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-224" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-222" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-220" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-218" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-216" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-214" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-212" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-210" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-208" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-206" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-204" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-202" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-200" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jykim74/BerEditor/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CertMan
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CertMan
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certman/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.github.io/certman_manual" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certman/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jykim74/CertMan/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CryptokiMan
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CryptokiMan
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cryptokiman/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.github.io/cryptokiman_manual" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cryptokiman/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jykim74/CryptokiMan/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    License
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.mycafe24.com/user_reg.php?lang=en" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get a free license
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pki/273-Get-a-Free-License/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Applying the license
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usefull Link
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Usefull Link
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://luca.ntop.org/Teaching/Appunti/asn1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER and DER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-302" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 3.0.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-300" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 3.0.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-298" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-294" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-292" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-290" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.9.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-286" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-284" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-282" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-280" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.8.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-278" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-276" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-274" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-272" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-270" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.7.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-268" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-266" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-264" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-262" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-260" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.6.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-258" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-256" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-254" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-252" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-250" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.5.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-244" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.4.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-242" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.4.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-240" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.4.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-238" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-236" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-234" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-232" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-230" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.3.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-228" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-226" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-224" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-222" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-220" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-218" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-216" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-214" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-212" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-210" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.1.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-208" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-206" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-204" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-202" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-200" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="bereditor-update-release">BerEditor Update Release</h1>
+<h2 id="version-302">Version 3.0.2</h2>
+<ul>
+<li>Display information about path validation options</li>
+<li>Support for EST Client Authentication</li>
+<li>Change App Domain (Resets all settings and licenses)</li>
+<li>Change of Copyright</li>
+<li>Fixing CMP client errors and improving the UI</li>
+</ul>
+<h2 id="version-300">Version 3.0.0</h2>
+<ul>
+<li>Fixed errors related to LDAP CA import</li>
+<li>Fixed errors related to CMS signing and verification</li>
+<li>Fixed errors related to PDF signing and verification</li>
+</ul>
+<h2 id="version-298">Version 2.9.8</h2>
+<ul>
+<li>Fixed an error in private key decryption</li>
+<li>Added support for manual links</li>
+</ul>
+<h2 id="version-296">Version 2.9.6</h2>
+<ul>
+<li>CertMan system supports loading the trust list.</li>
+<li>Trust checks are performed by default during certificate validation.</li>
+</ul>
+<h2 id="version-294">Version 2.9.4</h2>
+<ul>
+<li>Fixed LDAP import issues and several critical errors</li>
+</ul>
+<h2 id="version-292">Version 2.9.2</h2>
+<ul>
+<li>Removed debug console messages</li>
+<li>Added license notification check</li>
+<li>Added EST client functionality</li>
+<li>Added ACME Challenge test functionality</li>
+<li>Fixed client-related errors</li>
+<li>UI improvements and bug fixes</li>
+</ul>
+<h2 id="version-290">Version 2.9.0</h2>
+<ul>
+<li>Implemented separate PDF Signer module</li>
+<li>Added support for PDF DSS VRI DocTimeStamp</li>
+<li>Improved OCSP/TSP view</li>
+<li>Added support for setting verification time for CMS PKCS7 PDF Signer</li>
+<li>Added visual distinction for modeless window backgrounds</li>
+<li>Fixed multiple errors and improved stability</li>
+</ul>
+<h2 id="version-286">Version 2.8.6</h2>
+<ul>
+<li>Added support for converting BER data from Indefinite length to Definite length</li>
+<li>Added Binary view support</li>
+<li>Added Text view support</li>
+</ul>
+<h2 id="version-284">Version 2.8.4</h2>
+<ul>
+<li>Added BER comparison support</li>
+<li>Changed private key creation to a modeless window</li>
+<li>Added label support for PDF signing</li>
+</ul>
+<h2 id="version-282">Version 2.8.2</h2>
+<ul>
+<li>Added private key creation support</li>
+</ul>
+<h2 id="version-280">Version 2.8.0</h2>
+<ul>
+<li>Fixed PDF signature view errors</li>
+<li>Fixed PKCS7 errors</li>
+</ul>
+<h2 id="version-278">Version 2.7.8</h2>
+<ul>
+<li>Added support for issuing free licenses via the license window (email input required)</li>
+</ul>
+<h2 id="version-276">Version 2.7.6</h2>
+<ul>
+<li>Added BER node view support</li>
+<li>Fixed "Save As" errors</li>
+<li>Fixed PDF signature errors</li>
+<li>Added data input support for PKCS7 CMS Detached signatures</li>
+</ul>
+<h2 id="version-274">Version 2.7.4</h2>
+<ul>
+<li>Fixed CMS PKCS7 errors</li>
+<li>Added PDF signing functionality</li>
+</ul>
+<h2 id="version-272">Version 2.7.2</h2>
+<ul>
+<li>Added icon indicators for expired certificate CRLs</li>
+<li>Added icons for individual function windows</li>
+</ul>
+<h2 id="version-270">Version 2.7.0</h2>
+<ul>
+<li>Fixed crash occurring on right-click in the BER tree</li>
+<li>Stability improvements implemented following previous testing limitations. - Users of previous versions are encouraged to update.</li>
+</ul>
+<h2 id="version-268">Version 2.6.8</h2>
+<ul>
+<li>Added "Previous/Next" navigation for BER</li>
+<li>Fixed BER search errors and added support for keyword inclusion/exclusion searches</li>
+<li>Fixed errors occurring when expanding BER BITSTREAM</li>
+<li>Added "Previous/Next" navigation for TTLV</li>
+<li>Fixed TTLV search errors and added support for keyword inclusion/exclusion searches</li>
+<li>Separated settings for displaying selected areas in BER and TTLV</li>
+<li>Added options to read CertMan CA and CRL during certificate path validation</li>
+</ul>
+<h2 id="version-266">Version 2.6.6</h2>
+<ul>
+<li>Fixed BER editing errors (add/delete/modify) and improved UI</li>
+<li>Added support for 0x80 length (Indefinite mode) during BER editing</li>
+<li>Fixed TTLV editing errors (add/delete/modify) and improved UI</li>
+</ul>
+<h2 id="version-264">Version 2.6.4</h2>
+<ul>
+<li>Fixed SSS errors and added support for GF(256)</li>
+<li>Added support for configuring PKCS8/PKCS12 encryption methods</li>
+<li>Improved internal management efficiency</li>
+</ul>
+<h2 id="version-262">Version 2.6.2</h2>
+<ul>
+<li>Added support for ChaCha20 and ChaCha20_Poly1305 encryption/decryption</li>
+</ul>
+<h2 id="version-260">Version 2.6.0</h2>
+<ul>
+<li>Added option for automatic expansion of BITSTRING and OCTETSTRING in DER view</li>
+<li>Improved display of Init/Update/Final state information</li>
+<li>Added support for identical RDNs in CSR DN display</li>
+</ul>
+<h2 id="version-258">Version 2.5.8</h2>
+<ul>
+<li>Bug fixes and UI improvements</li>
+</ul>
+<h2 id="version-256">Version 2.5.6</h2>
+<ul>
+<li>Bug fixes and UI improvements</li>
+</ul>
+<h2 id="version-254">Version 2.5.4</h2>
+<ul>
+<li>Added Drag and Drop support for multiple function windows</li>
+<li>Bug fixes and UI improvements</li>
+</ul>
+<h2 id="version-252">Version 2.5.2</h2>
+<ul>
+<li>Removed BER header from BITSTRING display in certificate signature information</li>
+<li>UI improvements</li>
+</ul>
+<h2 id="version-250">Version 2.5.0</h2>
+<ul>
+<li>Added support for PQC algorithms ML-KEM, ML-DSA, and SLH (key generation, CSR, digital signature, certificate)</li>
+<li>Hash - Added support for SHAKE128, SHAKE256, and SHA3 algorithms</li>
+<li>Display KID in Certificate, Private Key, and CSR views</li>
+<li>Added KEM functionality to Key Management</li>
+<li>Added BER format validation</li>
+<li>Added MAC verification functionality</li>
+<li>Updated to OpenSSL 3.5.3 library</li>
+<li>UI improvements and bug fixes</li>
+</ul>
+<h2 id="version-244">Version 2.4.4</h2>
+<ul>
+<li>Added Doc Signer functionality</li>
+<li>Separated PKCS7 CMS and improved functionality</li>
+<li>UI improvements and bug fixes</li>
+</ul>
+<h2 id="version-242">Version 2.4.2</h2>
+<ul>
+<li>Fixed errors and improved Certificate Management</li>
+<li>Fixed error in certificate path validation trust list support</li>
+<li>Internal code improvements</li>
+</ul>
+<h2 id="version-240">Version 2.4.0</h2>
+<ul>
+<li>Added support for viewing TSP messages in CMS view</li>
+<li>Prompt to save file on exit only if the path exists</li>
+<li>Added support for user authentication requests in TSP client</li>
+<li>Bug fixes and UI improvements</li>
+</ul>
+<h2 id="version-238">Version 2.3.8</h2>
+<ul>
+<li>Added right-click context menu support for CertMan, KeyPairMan, and KeyList</li>
+<li>Fixed CRL view error in X.509 comparison</li>
+<li>Added KeyPairMan support for public key encryption/decryption (signing/verification)</li>
+<li>Added binary file writing support in Data Converter</li>
+<li>Fixed PEM header error for private keys</li>
+<li>Bug fixes and UI improvements</li>
+</ul>
+<h2 id="version-236">Version 2.3.6</h2>
+<ul>
+<li>Added ACME client functionality</li>
+<li>Fixed time handling error for dates beyond 2038</li>
+<li>Stability improvements and bug fixes</li>
+</ul>
+<h2 id="version-234">Version 2.3.4</h2>
+<ul>
+<li>Fixed time handling error for dates beyond 2038 in Certificate CRLs</li>
+</ul>
+<h2 id="version-232">Version 2.3.2</h2>
+<ul>
+<li>Added support for importing/exporting DH parameters in Key Agreement</li>
+<li>Added X.509 (Certificate, CRL, CSR) comparison functionality</li>
+<li>Added timer display for BigNum calculations</li>
+<li>Font updates - Restricted settings to use monospace fonts</li>
+<li>Implemented DockWidget handling for SSL info tree and log windows</li>
+<li>Added OCSP Client and CA CRL BER retrieval functions to the certificate info window</li>
+<li>Added support for Nonce input and response CertID viewing in OCSP Client</li>
+<li>Completely revamped KMIP Encoder UI</li>
+<li>Various UI improvements and bug fixes</li>
+</ul>
+<h2 id="version-230">Version 2.3.0</h2>
+<ul>
+<li>Reads the most recent path when selecting files</li>
+<li>Improved CMS UI</li>
+</ul>
+<h2 id="version-228">Version 2.2.8</h2>
+<ul>
+<li>Fixed errors and improved stability for Shamir Secret Sharing</li>
+<li>Removed active state handling for table header UI</li>
+<li>UI improvements</li>
+</ul>
+<h2 id="version-226">Version 2.2.6</h2>
+<ul>
+<li>Improved Number Converter UI</li>
+<li>Added some explanatory UI messages</li>
+<li>Bug fixes and stability improvements</li>
+</ul>
+<h2 id="version-224">Version 2.2.4</h2>
+<ul>
+<li>Fixed error occurring with single-digit BigNum calculations</li>
+<li>Improved UI messages</li>
+<li>Fixed miscellaneous errors</li>
+</ul>
+<h2 id="version-222">Version 2.2.2</h2>
+<ul>
+<li>Added SCrypt support to Key Management</li>
+<li>Fixed error displaying trusted certificates during SSL checks</li>
+<li>UI improvements</li>
+</ul>
+<h2 id="version-220">Version 2.2.0</h2>
+<ul>
+<li>Added SM2 algorithm support</li>
+<li>Bug fixes and stability improvements</li>
+</ul>
+<h2 id="version-218">Version 2.1.8</h2>
+<ul>
+<li>Added "Restore Defaults" option in settings</li>
+<li>Updated English messages for toolbars, menus, etc.</li>
+<li>Bug fixes and UI improvements</li>
+</ul>
+<h2 id="version-216">Version 2.1.6</h2>
+<ul>
+<li>Fixed license recognition errors</li>
+<li>UI improvements and bug fixes</li>
+</ul>
+<h2 id="version-214">Version 2.1.4</h2>
+<ul>
+<li>Added key list management function</li>
+<li>Added line numbering and improved views for XML, JSON, and Text</li>
+<li>Added line numbering for info views</li>
+<li>Stability and UI improvements</li>
+<li>Bug fixes (Critical bug fixed; please update)</li>
+</ul>
+<h2 id="version-212">Version 2.1.2</h2>
+<ul>
+<li>Added BER TTLV search function</li>
+<li>UI improvements</li>
+</ul>
+<h2 id="version-210">Version 2.1.0</h2>
+<ul>
+<li>Added toolbar icon selection support</li>
+<li>Added JSON view support - Added links to PKI standard documents</li>
+<li>Improved export UI</li>
+</ul>
+<h2 id="version-208">Version 2.0.8</h2>
+<ul>
+<li>Added support for viewing CMS (PKCS7) messages</li>
+<li>Improved CMS functionality</li>
+<li>Added key editing settings for key pair management</li>
+<li>UI improvements and bug fixes</li>
+</ul>
+<h2 id="version-206">Version 2.0.6</h2>
+<ul>
+<li>Added partial support for ACVP basic algorithms (limited to basic options)</li>
+<li>Added integration for sign/verify and public key encryption/decryption in certificate and key pair management</li>
+<li>Added support for Hash MCT alternate</li>
+<li>Added IV input support for GMAC</li>
+<li>Added support for DRBG without a nonce</li>
+<li>Fixed CCM encryption/decryption error (error occurred when AAD was missing)</li>
+<li>Fixed Seed MCT error</li>
+</ul>
+<h2 id="version-204">Version 2.0.4</h2>
+<ul>
+<li>Added support for HKDF and ANSX963 KDF in key management</li>
+<li>Fixed errors in CMP, OCSP, TSP, and SCEP clients</li>
+<li>Fixed CAVP MCT test errors</li>
+<li>Fixed CertMan errors</li>
+<li>Stability improvements and UI enhancements</li>
+</ul>
+<h2 id="version-202">Version 2.0.2</h2>
+<ul>
+<li>Improved BN calculator UI</li>
+<li>Added support for full and partial views for JSON and Text</li>
+<li>Supports both BER and TTLV</li>
+<li>Highlights selected areas in full view</li>
+<li>Removed SyntaxHighlighter (to eliminate lag)</li>
+<li>Fixed EdDSA sign/verify errors</li>
+<li>Other performance improvements and stability fixes</li>
+</ul>
+<h2 id="version-200">Version 2.0.0</h2>
+<ul>
+<li>Stability improvements and bug fixes</li>
+<li>Significant UI interface improvements</li>
+<li>Please update, as many critical errors have been fixed.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2026 <a href="mailto:jykim74@gmail.com">JayKim</a>, Maintained by the <a href="https://jykim74.github.io/jklab">JKLab</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

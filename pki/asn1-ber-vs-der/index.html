@@ -1,0 +1,1991 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Compare ASN.1 BER and DER encoding rules with hexadecimal examples, including lengths, Boolean values, strings, certificates, and signatures.">
+      
+      
+        <meta name="author" content="JayKim">
+      
+      
+        <link rel="canonical" href="https://jykim74.github.io/wiki/pki/asn1-ber-vs-der/">
+      
+      
+        <link rel="prev" href="../259-Private-Keys-Public-Keys-and-Certificates/">
+      
+      
+        <link rel="next" href="../../bereditor/download/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../images/bereditor.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>ASN.1 BER vs DER: Encoding Rules and Examples - JKLab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <meta name="google-site-verification" content="qVBKeLLARNTt0GWQdD-wTzRhJV0I_VuURZZXuvj1qY" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#asn1-ber-vs-der-differences-and-encoding-examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="JKLab" class="md-header__button md-logo" aria-label="JKLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JKLab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ASN.1 BER vs DER: Encoding Rules and Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jykim74/wiki/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="JKLab" class="md-nav__button md-logo" aria-label="JKLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    JKLab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jykim74/wiki/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PKI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PKI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER vs DER
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER vs DER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#asn1-ber-and-der-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASN.1, BER, and DER at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-asn1-tag-length-value-encoding-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How ASN.1 tag-length-value encoding works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-values-flexible-ber-versus-canonical-der" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boolean values: flexible BER versus canonical DER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-encoding-definite-and-indefinite-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length encoding: definite and indefinite forms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Length encoding: definite and indefinite forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definite-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definite length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indefinite-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indefinite length
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-and-constructed-string-encodings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive and constructed string encodings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-ordering-and-default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SET ordering and default values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-encoding-a-rule-ber-already-enforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTEGER encoding: a rule BER already enforces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-der-matters-for-x509-certificates-and-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why DER matters for X.509 certificates and digital signatures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ber-der-and-pem-what-is-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BER, DER, and PEM: what is the difference?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-inspect-ber-and-der-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to inspect BER and DER data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../130-Public-Key-Infrastructure-PKI-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PKI Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../136-A-Story-About-Digital-Signatures-and-Certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Signatures and Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../259-Private-Keys-Public-Keys-and-Certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PrivateKey, PublicKey, Certificate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER vs DER
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER vs DER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#asn1-ber-and-der-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASN.1, BER, and DER at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-asn1-tag-length-value-encoding-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How ASN.1 tag-length-value encoding works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-values-flexible-ber-versus-canonical-der" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boolean values: flexible BER versus canonical DER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-encoding-definite-and-indefinite-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length encoding: definite and indefinite forms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Length encoding: definite and indefinite forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definite-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definite length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indefinite-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indefinite length
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-and-constructed-string-encodings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive and constructed string encodings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-ordering-and-default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SET ordering and default values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-encoding-a-rule-ber-already-enforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTEGER encoding: a rule BER already enforces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-der-matters-for-x509-certificates-and-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why DER matters for X.509 certificates and digital signatures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ber-der-and-pem-what-is-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BER, DER, and PEM: what is the difference?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-inspect-ber-and-der-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to inspect BER and DER data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BerEditor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BerEditor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bereditor/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.github.io/bereditor_manual" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bereditor/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jykim74/BerEditor/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CertMan
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CertMan
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certman/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.github.io/certman_manual" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certman/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jykim74/CertMan/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CryptokiMan
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CryptokiMan
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cryptokiman/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.github.io/cryptokiman_manual" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cryptokiman/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/jykim74/CryptokiMan/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    License
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jykim74.mycafe24.com/user_reg.php?lang=en" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get a free license
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../273-Get-a-Free-License/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Applying the license
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usefull Link
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Usefull Link
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://luca.ntop.org/Teaching/Appunti/asn1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASN.1 BER and DER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#asn1-ber-and-der-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASN.1, BER, and DER at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-asn1-tag-length-value-encoding-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How ASN.1 tag-length-value encoding works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-values-flexible-ber-versus-canonical-der" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boolean values: flexible BER versus canonical DER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-encoding-definite-and-indefinite-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length encoding: definite and indefinite forms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Length encoding: definite and indefinite forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definite-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definite length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indefinite-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indefinite length
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-and-constructed-string-encodings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive and constructed string encodings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-ordering-and-default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SET ordering and default values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-encoding-a-rule-ber-already-enforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTEGER encoding: a rule BER already enforces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-der-matters-for-x509-certificates-and-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why DER matters for X.509 certificates and digital signatures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ber-der-and-pem-what-is-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BER, DER, and PEM: what is the difference?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-inspect-ber-and-der-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to inspect BER and DER data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="asn1-ber-vs-der-differences-and-encoding-examples">ASN.1 BER vs DER: Differences and Encoding Examples</h1>
+<p><strong>BER (Basic Encoding Rules)</strong> and <strong>DER (Distinguished Encoding Rules)</strong> specify how to encode ASN.1 values as bytes. BER allows multiple valid encodings for some values. DER adds restrictions to BER so that a given value, under a given ASN.1 type and schema, has a canonical encoding. Consequently, every valid DER encoding is also valid BER, but not every valid BER encoding is valid DER.</p>
+<p>This guide compares the rules with hexadecimal examples and explains why DER matters for X.509 certificates and digital signatures. Both sets of rules are specified in <a href="https://www.itu.int/rec/T-REC-X.690/en">ITU-T X.690</a>.</p>
+<h2 id="asn1-ber-and-der-at-a-glance">ASN.1, BER, and DER at a glance</h2>
+<p><strong>ASN.1 (Abstract Syntax Notation One)</strong> describes data types and structures independently of their encoded form. Encoding rules specify how an ASN.1 value is represented as bytes for storage or transfer.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>BER</th>
+<th>DER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Flexible encoding of ASN.1 values</td>
+<td>Canonical encoding with additional restrictions</td>
+</tr>
+<tr>
+<td>Encodings for a value</td>
+<td>Some values have multiple valid encodings</td>
+<td>One canonical encoding for a given value and type</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>Definite, or indefinite for constructed encodings</td>
+<td>Definite, using the shortest permitted form</td>
+</tr>
+<tr>
+<td>Boolean <code>TRUE</code></td>
+<td>Any nonzero contents octet</td>
+<td>Contents octet must be <code>FF</code></td>
+</tr>
+<tr>
+<td>String encoding</td>
+<td>Some string types allow primitive or constructed forms</td>
+<td>String types covered below use primitive form</td>
+</tr>
+<tr>
+<td><code>SET</code> and <code>SET OF</code></td>
+<td>Component order can vary within BER rules</td>
+<td>Canonical ordering rules apply</td>
+</tr>
+<tr>
+<td>Typical use</td>
+<td>Protocols and applications that allow BER</td>
+<td>X.509 certificates and other formats requiring canonical bytes</td>
+</tr>
+</tbody>
+</table>
+<p>The applicable protocol or file format determines which rules to use. DER is useful when a standard requires reproducible bytes; BER is useful when its flexibility is allowed.</p>
+<h2 id="how-asn1-tag-length-value-encoding-works">How ASN.1 tag-length-value encoding works</h2>
+<p>BER and DER encodings generally follow a <strong>tag-length-value (TLV)</strong> structure:</p>
+<pre><code class="language-text">Tag       Length    Contents
+01        01        FF
+</code></pre>
+<p>In this example, <code>01</code> is the universal tag for <code>BOOLEAN</code>, the next <code>01</code> says the contents are one octet long, and <code>FF</code> represents <code>TRUE</code>. A tag or length can occupy more than one octet. For constructed values, the contents contain encodings of component values.</p>
+<h2 id="boolean-values-flexible-ber-versus-canonical-der">Boolean values: flexible BER versus canonical DER</h2>
+<p>A BOOLEAN has exactly one contents octet. Under BER, <code>00</code> means <code>FALSE</code> and any nonzero octet means <code>TRUE</code>. DER requires <code>FF</code> for <code>TRUE</code>:</p>
+<pre><code class="language-text">01 01 00    FALSE: valid BER and DER
+01 01 01    TRUE:  valid BER, but not DER
+01 01 FF    TRUE:  valid BER and DER
+</code></pre>
+<p>The two <code>TRUE</code> encodings represent the same ASN.1 value but differ in bytes. DER removes that choice.</p>
+<h2 id="length-encoding-definite-and-indefinite-forms">Length encoding: definite and indefinite forms</h2>
+<h3 id="definite-length">Definite length</h3>
+<p>A definite length specifies the number of contents octets before the contents. For lengths from 0 through 127, the short form uses one length octet:</p>
+<pre><code class="language-text">04 03 41 42 43
+│  │  └─────── Contents: ASCII bytes for ABC
+│  └────────── Length: 3 octets
+└───────────── OCTET STRING tag
+</code></pre>
+<p>For larger lengths, the long form uses an initial octet indicating how many subsequent octets encode the length. For example, <code>81 80</code> specifies a contents length of 128 octets.</p>
+<p>BER permits long-form lengths even where the short form would suffice. DER requires the shortest permitted length form:</p>
+<pre><code class="language-text">04 03    41 42 43    OCTET STRING &quot;ABC&quot;: valid BER and DER
+04 81 03 41 42 43    OCTET STRING &quot;ABC&quot;: valid BER, but not DER
+</code></pre>
+<h3 id="indefinite-length">Indefinite length</h3>
+<p>BER also permits an <strong>indefinite length</strong> for constructed encodings. The length octet is <code>80</code>, and an end-of-contents marker, <code>00 00</code>, terminates the contents:</p>
+<pre><code class="language-text">30 80             SEQUENCE, indefinite length
+   02 01 05       INTEGER 5
+00 00             End-of-contents marker
+</code></pre>
+<p>This is valid BER but not DER. A DER encoding of the same sequence uses a definite length:</p>
+<pre><code class="language-text">30 03             SEQUENCE, 3 contents octets
+   02 01 05       INTEGER 5
+</code></pre>
+<p>Indefinite length can be useful when encoding constructed data incrementally. It is not permitted for primitive values, and DER does not permit it for any value.</p>
+<h2 id="primitive-and-constructed-string-encodings">Primitive and constructed string encodings</h2>
+<p>BER allows certain string types, including <code>OCTET STRING</code>, to use either primitive encoding or constructed encoding made of segments. Consider the octets for <code>ABC</code>:</p>
+<pre><code class="language-text">04 03 41 42 43                  Primitive OCTET STRING: BER and DER
+
+24 80                           Constructed OCTET STRING: BER only
+   04 02 41 42                  Segment: AB
+   04 01 43                     Segment: C
+00 00                           End-of-contents marker
+</code></pre>
+<p>The constructed example is valid BER, but not DER. DER requires the primitive form for <code>OCTET STRING</code> and <code>BIT STRING</code>, as well as the other restricted character string types covered by X.690. Constructed encoding itself is not forbidden in DER: types such as <code>SEQUENCE</code> and <code>SET</code> are constructed.</p>
+<h2 id="set-ordering-and-default-values">SET ordering and default values</h2>
+<p>DER adds rules beyond Boolean values and lengths:</p>
+<ul>
+<li><strong><code>SET</code>:</strong> Components are encoded in the canonical order specified by their tags.</li>
+<li><strong><code>SET OF</code>:</strong> Encoded elements are sorted according to the ordering rules for their complete encodings. This is distinct from the <code>SET</code> rule.</li>
+<li><strong><code>DEFAULT</code> components:</strong> A component whose value equals its ASN.1 default must be omitted in DER. BER permits it to be encoded explicitly.</li>
+</ul>
+<p>For example, with <code>Example ::= SEQUENCE { flag BOOLEAN DEFAULT FALSE }</code>, both examples below are valid BER encodings of the default-valued sequence, but only the first is DER:</p>
+<pre><code class="language-text">30 00                Empty SEQUENCE: default applies; BER and DER
+30 03 01 01 00       Explicit FALSE: BER, not DER
+</code></pre>
+<p>The schema is essential to interpreting a default value; the bytes alone do not identify the ASN.1 definition.</p>
+<h2 id="integer-encoding-a-rule-ber-already-enforces">INTEGER encoding: a rule BER already enforces</h2>
+<p>Not every constraint is unique to DER. BER already requires an <code>INTEGER</code> to use the minimum number of contents octets needed for its signed two's-complement value. For example:</p>
+<pre><code class="language-text">02 01 7F       INTEGER 127: valid BER and DER
+02 02 00 80    INTEGER 128: valid BER and DER; 00 keeps it positive
+02 02 00 7F    INTEGER 127: invalid BER and DER; 00 is redundant
+</code></pre>
+<p>An extra leading octet is therefore not a valid way to illustrate a BER-versus-DER difference for an INTEGER.</p>
+<h2 id="why-der-matters-for-x509-certificates-and-digital-signatures">Why DER matters for X.509 certificates and digital signatures</h2>
+<p>A digital signature is calculated over bytes. If two encodings represent the same logical value but differ byte for byte, their hashes can differ too. Canonical DER encoding provides a consistent representation when a specification requires one.</p>
+<p>For example, <a href="https://www.rfc-editor.org/rfc/rfc5280.html">RFC 5280</a> specifies DER encoding of <code>tbsCertificate</code> for X.509 certificate signature calculation. A verifier must follow the relevant protocol and verify the exact signed data according to its rules; simply decoding and re-encoding arbitrary input does not make it valid DER or guarantee the correct verification result.</p>
+<h2 id="ber-der-and-pem-what-is-the-difference">BER, DER, and PEM: what is the difference?</h2>
+<p>BER and DER are ASN.1 encoding rules. <strong>PEM</strong> is a text format commonly used to carry Base64-encoded binary data between labeled boundary lines. A PEM certificate typically contains DER-encoded X.509 data:</p>
+<pre><code class="language-text">-----BEGIN CERTIFICATE-----
+...Base64-encoded certificate bytes...
+-----END CERTIFICATE-----
+</code></pre>
+<p>A file extension alone does not reliably identify the encoding. Check the file contents and the format expected by the application.</p>
+<h2 id="how-to-inspect-ber-and-der-data">How to inspect BER and DER data</h2>
+<p><a href="../../bereditor/download/">Download BerEditor</a> to inspect and edit ASN.1 BER/DER data. When comparing an encoding with DER requirements, check its length forms, primitive or constructed representation, ordering, default values, and any type-specific constraints. A BER parser accepting a file does not by itself prove that the file is DER-compliant.</p>
+<p>For related concepts, see <a href="../130-Public-Key-Infrastructure-PKI-Concepts/">Public Key Infrastructure (PKI) Concepts</a> and <a href="../259-Private-Keys-Public-Keys-and-Certificates/">Private Keys, Public Keys, and Certificates</a>.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.itu.int/rec/T-REC-X.690/en">ITU-T X.690: BER, CER, and DER encoding rules</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc5280.html">RFC 5280: Internet X.509 Public Key Infrastructure Certificate and CRL Profile</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2026 <a href="mailto:jykim74@gmail.com">JayKim</a>, Maintained by the <a href="https://jykim74.github.io/wiki">JKLab</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

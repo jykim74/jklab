@@ -2,58 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jykim74.github.io/wiki/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/about/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/tools/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/bereditor/download/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/bereditor/release/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/blog/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/certman/download/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/certman/release/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/cryptokiman/download/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/cryptokiman/release/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/pki/130-Public-Key-Infrastructure-PKI-Concepts/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/pki/136-A-Story-About-Digital-Signatures-and-Certificates/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/pki/259-Private-Keys-Public-Keys-and-Certificates/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
     </url>
     <url>
          <loc>https://jykim74.github.io/wiki/pki/273-Get-a-Free-License/</loc>
-         <lastmod>2026-11-20</lastmod>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
+         <loc>https://jykim74.github.io/wiki/pki/asn1-ber-vs-der/</loc>
+         <lastmod>2026-11-21</lastmod>
     </url>
 </urlset>

@@ -20,7 +20,7 @@ theme:
 extra:
   analytics:
     provider: google
-    gtag: G-GL5B8J3NB2
+    property: G-GL5B8J3NB2
 
 nav:
  - Home: index.md
@@ -58,9 +58,6 @@ nav:
 
  - Usefull Link:
    - ASN.1 BER and DER: https://luca.ntop.org/Teaching/Appunti/asn1.html
-
-extra_css:
-  - css/extra.css
 
 plugins:
   - search

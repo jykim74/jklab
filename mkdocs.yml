@@ -35,6 +35,7 @@ nav:
    - ASN.1 BER vs DER : pki/asn1-ber-vs-der.md
    - TLS Certificate Validity: pki/tls-ssl-certificate-validity-policy.md
    - Post-Quantum Cryptography: pki/post-quantum-cryptography-algorithms.md
+   - Certificate File Extensions Explained: pki/certificate-file-extensions-pem-der-crt-cer-csr-pfx-p12.md
    - Tools: tools.md
 
  - BerEditor: 

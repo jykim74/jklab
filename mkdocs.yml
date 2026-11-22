@@ -16,6 +16,9 @@ theme:
   custom_dir: overrides
   palette:
     primary: indigo
+  features:
+    - navigation.sections
+    - navigation.tabs
 
 extra:
   analytics:
@@ -24,13 +27,14 @@ extra:
 
 nav:
  - Home: index.md
- - Tools: tools.md
  - PKI:
-   - ASN.1 BER vs DER: pki/asn1-ber-vs-der.md
    - PKI Concept: pki/130-Public-Key-Infrastructure-PKI-Concepts.md
    - Digital Signatures and Certificates: pki/136-A-Story-About-Digital-Signatures-and-Certificates.md
    - PrivateKey, PublicKey, Certificate: pki/259-Private-Keys-Public-Keys-and-Certificates.md
+   - Basic Encoding Rule: pki/asn1-ber-encoding-tag-length.md
    - ASN.1 BER vs DER : pki/asn1-ber-vs-der.md
+   - TLS Certificate Validity: pki/tls-ssl-certificate-validity-policy.md
+   - Tools: tools.md
 
  - BerEditor: 
    - Download: bereditor/download.md
@@ -51,8 +55,8 @@ nav:
    - Q&A: https://github.com/jykim74/CryptokiMan/discussions 
 
  - License:
-   - Get a free license: https://jykim74.mycafe24.com/user_reg.php?lang=en
    - Applying the license: pki/273-Get-a-Free-License.md 
+   - Get a free license: https://jykim74.mycafe24.com/user_reg.php?lang=en
 
  - About me: about.md
 
@@ -62,8 +66,6 @@ nav:
 plugins:
   - search
   - blog
-  - rss
-
 
 copyright: Copyright &copy; 2016 - 2026 <a href="mailto:jykim74@gmail.com">JayKim</a>, Maintained by the <a href="https://jykim74.github.io/jklab">JKLab</a>.
 

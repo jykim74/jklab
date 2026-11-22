@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://jykim74.github.io/jklab/pki/asn1-ber-encoding-tag-length/">
       
       
+        <link rel="prev" href="../259-Private-Keys-Public-Keys-and-Certificates/">
+      
+      
+        <link rel="next" href="../asn1-ber-vs-der/">
       
       
         
@@ -307,18 +311,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -339,7 +345,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -466,10 +472,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../asn1-ber-encoding-tag-length.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Encoding Rule
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -485,6 +518,297 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-ber-tag-length-value-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The BER tag-length-value structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ber-identifier-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BER identifier encoding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BER identifier encoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primitive-and-constructed-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive and constructed forms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-number-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag number encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifier-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifier examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ber-length-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BER length encoding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BER length encoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#short-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indefinite-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indefinite form
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ber-encoding-examples-for-asn1-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BER encoding examples for ASN.1 types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BER encoding examples for ASN.1 types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BOOLEAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTEGER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bit-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIT STRING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#octet-string-and-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCTET STRING and NULL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-and-implicit-tagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit and implicit tagging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEQUENCE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEQUENCE OF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHOICE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OBJECT IDENTIFIER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generalizedtime-and-utctime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GeneralizedTime and UTCTime
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 

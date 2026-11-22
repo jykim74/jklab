@@ -20,8 +20,6 @@ Given the vast array of standards and technologies involved in the field of PKI,
 
 If you have any questions regarding my areas of expertise or require assistance, please feel free to reach out.
 
-I would be happy to provide as much help as I can, provided it does not interfere with my current professional commitments.
-
 - 🌱 [The BerEditor](https://jykim74.github.io/wiki/bereditor/download/) is an auxiliary tool for PKI technology analysis.
 - 💞️ [The CertMan](https://jykim74.github.io/wiki/certman/download/) is a tool for managing X.509 Certificate and CRL.
 - ✨ [The CryptokiMan](https://jykim74.github.io/wiki/cryptokiman/download/) is a tool for managing HSM device with cryptoki library.

@@ -5,8 +5,23 @@ description: "Meet JayKim, the developer of JKLab’s PKI and cryptography tools
 
 # About me
 
-- 👋 Hi, I’m Korean, and I’m not very comfortable with English.
-- 👀 I primarily use OpenSSL and Qt when developing PKI technology.
+- 👋 Hi, I am a South Korean software developer with over 20 years of experience.
+
+My primary area of ​​expertise is the development of software related to PKI (Public Key Infrastructure) technology.
+
+Throughout my long career in PKI development, the open-source tool I have found most useful—and which is, in fact, indispensable to me—is OpenSSL.
+
+Additionally, for building desktop applications,
+I have primarily used the Qt framework to create software that runs across Windows, macOS, and Linux.
+
+My core development environment centers on C/C++ combined with OpenSSL and Qt.
+
+Given the vast array of standards and technologies involved in the field of PKI, I intend to continue working in this domain.
+
+If you have any questions regarding my areas of expertise or require assistance, please feel free to reach out.
+
+I would be happy to provide as much help as I can, provided it does not interfere with my current professional commitments.
+
 - 🌱 [The BerEditor](https://jykim74.github.io/wiki/bereditor/download/) is an auxiliary tool for PKI technology analysis.
 - 💞️ [The CertMan](https://jykim74.github.io/wiki/certman/download/) is a tool for managing X.509 Certificate and CRL.
 - ✨ [The CryptokiMan](https://jykim74.github.io/wiki/cryptokiman/download/) is a tool for managing HSM device with cryptoki library.

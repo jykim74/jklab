@@ -34,6 +34,7 @@ nav:
    - Basic Encoding Rule: pki/asn1-ber-encoding-tag-length.md
    - ASN.1 BER vs DER : pki/asn1-ber-vs-der.md
    - TLS Certificate Validity: pki/tls-ssl-certificate-validity-policy.md
+   - Post-Quantum Cryptography: pki/post-quantum-cryptography-algorithms.md
    - Tools: tools.md
 
  - BerEditor: 
@@ -57,6 +58,8 @@ nav:
  - License:
    - Applying the license: pki/273-Get-a-Free-License.md 
    - Get a free license: https://jykim74.mycafe24.com/user_reg.php?lang=en
+
+ - Blog: blog/index.md
 
  - About me: about.md
 

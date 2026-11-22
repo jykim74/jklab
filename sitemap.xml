@@ -25,6 +25,10 @@
          <lastmod>2026-11-22</lastmod>
     </url>
     <url>
+         <loc>https://jykim74.github.io/jklab/blog/2023/03/30/cryptography-mathematics-and-openssl-a-pki-developers-perspective/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://jykim74.github.io/jklab/certman/download/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
@@ -70,6 +74,14 @@
     </url>
     <url>
          <loc>https://jykim74.github.io/jklab/pki/tls-ssl-certificate-validity-policy/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://jykim74.github.io/jklab/blog/archive/2023/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://jykim74.github.io/jklab/blog/category/cryptography/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
 </urlset>
